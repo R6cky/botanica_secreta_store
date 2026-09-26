@@ -1,12 +1,28 @@
 // Insira o número da loja com DDI e DDD, somente dígitos. Exemplo: 5511999999999.
 const WHATSAPP_NUMBER = '31988170153';
 const PRODUCTS = [
-  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/hero-1.webp', alt: 'Colar oval com flor branca em resina' },
-  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/hero-2.webp', alt: 'Colar em gota com folhagem dourada em resina' },
-  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/hero-3.webp', alt: 'Colar redondo com flor roxa e folha verde em resina' },
-  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/hero-1.webp', alt: 'Colar oval com flor branca em resina' },
-  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/hero-2.webp', alt: 'Colar em gota com folhagem dourada em resina' },
-  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/hero-3.webp', alt: 'Colar redondo com flor roxa e folha verde em resina' }
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/1.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/2.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/3.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/4.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/5.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/6.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/7.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/8.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/9.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/10.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/11.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/12.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/13.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/14.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/15.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/16.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/17.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/18.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/19.jpg', alt: 'Colar oval com flor branca em resina' },
+  { name: 'Folha Dourada', detail: 'Folhagem em tons terrosos', image: 'assets/20.jpg', alt: 'Colar em gota com folhagem dourada em resina' },
+  { name: 'Flor de Outono', detail: 'Flor roxa e folha verde', image: 'assets/21.jpg', alt: 'Colar redondo com flor roxa e folha verde em resina' },
+  { name: 'Flor do Campo', detail: 'Flor branca em resina', image: 'assets/22.jpg', alt: 'Colar oval com flor branca em resina' },
 ];
 const PAGE_SIZE = 6;
 const whatsapp = message => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -22,7 +38,7 @@ function renderProducts(page) {
     const img = document.createElement('img'); img.src = p.image; img.alt = p.alt; img.loading = 'lazy'; frame.append(img);
     const info = document.createElement('div'); info.className = 'product-info';
     const words = document.createElement('div'), title = document.createElement('h3'), detail = document.createElement('p');
-    title.textContent = p.name; detail.textContent = p.detail; words.append(title, detail);
+    title.textContent = "Colar especial"; detail.textContent = "Colar em resina..."; words.append(title, detail);
     const link = document.createElement('a'); link.href = whatsapp(`Olá! Gostaria de saber mais sobre o colar ${p.name}.`); link.target = '_blank'; link.rel = 'noopener noreferrer'; link.setAttribute('aria-label', `Perguntar sobre ${p.name} no WhatsApp`); link.textContent = '↗';
     info.append(words, link); card.append(frame, info); grid.append(card);
   });
